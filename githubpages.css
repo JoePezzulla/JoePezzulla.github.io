@@ -15,7 +15,7 @@ body{
     to {background-color: white;}
 }
 
-body{
+.full{
 	animation-name: example;
 	animation-duration: 5s;
 }
