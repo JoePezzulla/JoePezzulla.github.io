@@ -1,3 +1,21 @@
 body{
-	background-color: #FF0000;
+	font-family: Arial;
+}
+
+.lorip{
+	border-top-style: solid;
+	border-top-width: 5px;
+	border-bottom-style: solid;
+	border-bottom-width: 5px;
+	text-indent: 33%;
+}
+
+@keyframes example {
+    from {background-color: red;}
+    to {background-color: white;}
+}
+
+body{
+	animation-name: example;
+	animation-duration: 5s;
 }
