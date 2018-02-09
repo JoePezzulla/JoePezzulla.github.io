@@ -1,0 +1,22 @@
+<h1>This is the second page of my GitHub pages site, it has Javascript!</h1>
+
+<link rel="stylesheet" href="githubpages.css">
+
+<div id="message"></div>
+<button id="button" onclick="displayMessage()">Click Me for Message!</button>
+<input type="button" onclick="location.href='./index.html';" value="Go to Homepage" />
+<button id="color" onclick="colorChange()">Click me to change the background color!</button>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+	function displayMessage(){
+		document.getElementById("message").innerHTML="Hello! This is a message!"
+	}
+	
+	function colorChange(){   
+    	var colors = ["green", "black","yellow"],
+    	selectedColor = colors[Math.floor(Math.random()*colors.length)]
+    	$("body").css("background-color", selectedColor);
+}
+</script>
+
