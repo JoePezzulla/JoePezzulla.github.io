@@ -10,14 +10,13 @@
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+	var message=document.getElementById("message")
 	function displayMessage(){
-		document.getElementById("message").innerHTML="Hello! This is a message!"
+		message.innerHTML="Hello! This is a message!"
 	}
 	
 	function colorChange(){   
-    	var colors = ["green", "black","yellow"],
-    	selectedColor = colors[Math.floor(Math.random()*colors.length)]
-    	$("body").css("background-color", selectedColor);
+    	$("body").css("background-color", green);
 }
 </script>
 </body>
