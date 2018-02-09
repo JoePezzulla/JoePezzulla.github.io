@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="githubpages.css">
 
 <body>
-<button onclick="myFunction()">Click me</button>
+<button onclick="myFunction()">Click me to see a message!</button>
 <div id="demo"></div>
 <input type="button" onclick="location.href='./index.html';" value="Go to Homepage" />
 <button id="color" onclick="colorChange()">Click me to change the background color!</button>
@@ -11,11 +11,13 @@
 
 <script>
 	function myFunction() {
-    document.getElementById("demo").innerHTML = "Hello World";
+    document.getElementById("demo").innerHTML = "Hi, this is a message!";
 }
-	
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
 	function colorChange(){   
     	$("body").css("background-color", green);
 }
+
 </script>
 </body>
