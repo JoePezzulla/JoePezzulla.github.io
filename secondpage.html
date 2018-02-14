@@ -1,0 +1,22 @@
+<h1>This is the second page of my GitHub pages site, it has Javascript!</h1>
+
+<link rel="stylesheet" href="githubpages.css">
+
+<body>
+
+<button onclick="myFunction()">Click me to see a message!</button>
+<div id="demo"></div>
+<input type="button" onclick="location.href='./index.html';" value="Go to Homepage" />
+<button onclick="colorChange()">Click me to change the background color!</button>
+
+
+<script>
+	function myFunction() {
+    	document.getElementById("demo").innerHTML = "Hi, this is a message!";
+}
+	function colorChange() {
+    	document.body.style.backgroundColor = "green";
+}
+</script>
+
+</body>
