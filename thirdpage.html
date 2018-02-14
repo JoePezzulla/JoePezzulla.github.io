@@ -1,0 +1,60 @@
+<h1>This is the third page of my GitHub pages site, it has Javascript!</h1>
+
+<style>
+	table, th, td {
+   border: 1px solid black;
+}
+</style>
+<body>
+
+<h2>Playlist Table</h2>
+
+<table id="playlistTable">
+	<thead><tr><th>Song Name</th><th>Artist</th></tr></thead>
+	<tbody id="playlistBody"></tbody>
+
+
+</table>
+
+
+<script>
+
+var myPlaylist=[
+	{
+		"Name": "GOLD",
+		"Artist": "Brockhampton",
+	},
+	{
+		"Name": "BOOGIE",
+		"Artist": "Brockhampton",
+	},
+	{
+		"Name": "Congratulations",
+		"Artist": "Post Malone",
+	},
+	{
+		"Name": "Rigamortis",
+		"Artist": "Kendrick Lamar",
+	},
+	{
+		"Name": "Someday",
+		"Artist": "The Strokes",
+	},
+]
+var newText="";
+var text1="";
+var text2="";
+for (var x in myPlaylist){
+	newText+="<tr>";
+	for(var y in myPlaylist[x]){
+		text1=myPlaylist[x][y];
+		
+		newText+="<td>" + text1 + "</td>";
+	}
+	newText+="</tr>"
+}
+
+document.getElementById("playlistBody").innerHTML=newText;
+</script>
+
+</body>
