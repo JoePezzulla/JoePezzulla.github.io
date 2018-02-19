@@ -10,8 +10,15 @@
 <h2>Playlist Table</h2>
 
 <table id="playlistTable">
-	<thead><tr><th>Song Name</th><th>Artist</th></tr></thead>
+	<thead><tr><th>Song Name</th><th>Artist</th><th>Length</th></tr></thead>
 	<tbody id="playlistBody"></tbody>
+
+
+</table>
+
+<table id="statTable">
+	<thead><tr><th>Total Songs</th><th>Total Artists</th><th>Total Length</th></tr></thead>
+	<tbody id="statBody"></tbody>
 
 
 </table>
@@ -23,22 +30,27 @@ var myPlaylist=[
 	{
 		"Name": "GOLD",
 		"Artist": "Brockhampton",
+		"Length": "2:30",
 	},
 	{
 		"Name": "BOOGIE",
 		"Artist": "Brockhampton",
+		"Length": "4:13",
 	},
 	{
 		"Name": "Congratulations",
 		"Artist": "Post Malone",
+		"Length": "3:46",
 	},
 	{
 		"Name": "Rigamortis",
 		"Artist": "Kendrick Lamar",
+		"Length": "5:43",
 	},
 	{
 		"Name": "Someday",
 		"Artist": "The Strokes",
+		"Length": "2:56",
 	},
 ]
 var newText="";
@@ -55,6 +67,50 @@ for (var x in myPlaylist){
 }
 
 document.getElementById("playlistBody").innerHTML=newText;
+
+function countSongs(){
+	var counter=0;
+	var checker;
+	var spotter=0;
+	for (var i=0; i<myPlaylist.length; i++) {
+		checker=myPlaylist[i]["Name"];
+		for(var j=0; j<myPlaylist.length; j++){
+			if(checker===(myPlaylist[j]["Name"])){
+				spotter++;
+			}
+		}
+		if(spotter>1){
+			counter++;
+		}
+	}
+	var finalLength=/*myPlaylist.length - */counter;
+	return finalLength;
+}
+
+function countArtists(){
+	var counter=0;
+	var checker;
+	var spotter=0;
+	for (var i=0; i<myPlaylist.length; i++) {
+		checker=myPlaylist[i]["Artist"];
+		for(var j=0; j<myPlaylist.length; j++){
+			if(checker===(myPlaylist[j]["Artist"])){
+				spotter++;
+			}
+		}
+		if(spotter>1){
+			counter++;
+		}
+	}
+	var finalLength=/*myPlaylist.length - */counter;
+	return finalLength;
+}
+
+function addTime(){
+
+}
+
+document.getElementById("statBody").innerHTML="<tr><td>" + countSongs() + "</td><td>" + countArtists() + "</td><td>" + addTime() + "</td></tr>";
 </script>
 
 </body>
