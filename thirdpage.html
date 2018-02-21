@@ -33,8 +33,8 @@ var myPlaylist=[
 		"Length": "2:30",
 	},
 	{
-		"Name": "BOOGIE",
-		"Artist": "Brockhampton",
+		"Name": "Mr. Brightside",
+		"Artist": "The Killers",
 		"Length": "4:13",
 	},
 	{
@@ -70,44 +70,47 @@ document.getElementById("playlistBody").innerHTML=newText;
 
 function countSongs(){
 	var counter=0;
-	var checker;
-	var spotter=0;
-	for (var i=0; i<myPlaylist.length; i++) {
-		checker=myPlaylist[i]["Name"];
-		for(var j=0; j<myPlaylist.length; j++){
-			if(checker===(myPlaylist[j]["Name"])){
-				spotter++;
-			}
-		}
-		if(spotter>1){
-			counter++;
-		}
+	for (var x in myPlaylist){
+		counter++;
 	}
-	var finalLength=/*myPlaylist.length - */counter;
-	return finalLength;
+	return counter.toString();
 }
 
 function countArtists(){
 	var counter=0;
-	var checker;
-	var spotter=0;
-	for (var i=0; i<myPlaylist.length; i++) {
-		checker=myPlaylist[i]["Artist"];
-		for(var j=0; j<myPlaylist.length; j++){
-			if(checker===(myPlaylist[j]["Artist"])){
-				spotter++;
-			}
-		}
-		if(spotter>1){
-			counter++;
-		}
+	for (var x in myPlaylist){
+		counter++;
 	}
-	var finalLength=/*myPlaylist.length - */counter;
-	return finalLength;
+	return counter.toString();
 }
 
 function addTime(){
-
+	var timeArray=[];
+	var returnString="";
+	var minSum=0;
+	var secSum=0;
+	for (var x in myPlaylist){
+		timeArray.push(myPlaylist[x]["Length"]);
+	}
+	for (var i=0; i<timeArray.length; i++){
+		timeArray[i]=timeArray[i].split(":");
+	}
+	console.log(timeArray);
+	for(var j=0; j<timeArray.length; j++){
+		for (var k=0; k<timeArray[j].length; k++){
+			timeArray[j][k]=parseInt(timeArray[j][k]);
+		}
+	}
+	console.log(timeArray);
+	for(var z=0; z<timeArray.length; z++){
+		minSum+=timeArray[0];
+		secSum=+timeArray[1];
+	}
+	secSum=secSum/60;
+	console.log(secSum);
+	finalNum=minSum+secSum;
+	returnString=finalNum.toString();
+	return returnString;
 }
 
 document.getElementById("statBody").innerHTML="<tr><td>" + countSongs() + "</td><td>" + countArtists() + "</td><td>" + addTime() + "</td></tr>";
